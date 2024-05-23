@@ -1,6 +1,45 @@
-<html>
-  <head> </head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rock Paper Scissors</title>
+  </head>
   <body>
+    <img
+      id="alexkidd"
+      src="images/alex kidd.png"
+      alt="sprite sheet of the character Alex Kidd"
+    />
+    <div id="container">
+      <canvas id="canvas"> </canvas>
+
+      <div id="controls">
+        <p>Select a weapon</p>
+        <div class="control">
+          <input id="rock" type="radio" name="rps" value="0" checked />
+          <label for="rock">Rock</label>
+        </div>
+        <div class="control">
+          <input id="paper" type="radio" name="rps" value="1" />
+          <label for="paper">Paper</label>
+        </div>
+        <div class="control">
+          <input id="scissors" type="radio" name="rps" value="2" />
+          <label for="scissors">Scissors</label>
+        </div>
+      </div>
+    </div>
+
+    <script src="./scripts/rps.js"></script>
+    <!-- Old script. This was used just to submit a minimal version of the project 
     <div id="wrapper">
       <div id="rules">BEST OUT OF 5</div>
       <button id="rock" value="rock" onclick="playRound('rock')">Rock</button>
@@ -17,5 +56,6 @@
       Play again?
     </button>
     <script src="./scripts/rps.js"></script>
+    -->
   </body>
 </html>
