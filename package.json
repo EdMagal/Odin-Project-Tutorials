@@ -2,7 +2,9 @@
   "devDependencies": {
     "jester": "^0.2.3"
   },
+  "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   }
 }
