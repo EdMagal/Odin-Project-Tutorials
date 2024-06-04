@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+body > div > button {
+  margin: 5px 40px;
+  width: 100px;
+  height: 40px;
+}
+
+div.square {
+  flex-grow: 1;
+  background-color: white;
+  border: 1px solid grey;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  background-color: lightgray;
+  border: 1px solid black;
+  box-shadow: 3px 3px 5px rgb(0, 0, 0);
+  margin: 5px;
+}
+
+#rainbow {
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+#progressive {
+  background-image: linear-gradient(to right, gray, lightgray);
+}
