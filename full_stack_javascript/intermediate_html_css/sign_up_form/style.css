@@ -3,6 +3,7 @@
 :root {
   --light-green: #b5d543;
   --mid-green: #86ab17;
+  --dark-green: #405505;
 }
 
 * {
@@ -19,6 +20,7 @@ body {
   overflow: hidden;
   color: var(--mid-green);
   background-color: black;
+  justify-content: space-evenly;
 }
 
 canvas {
@@ -68,6 +70,7 @@ input {
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
+  width: 35vw;
   z-index: -3;
 }
 
@@ -92,6 +95,7 @@ input {
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+  width: 40vw;
 }
 
 #message {
@@ -128,4 +132,42 @@ input:focus {
     /* inner */ 0 0 150px 4px var(--mid-green); /* outer */
   color: var(--mid-green);
   border-width: 0;
+}
+
+#submit {
+  background: var(--dark-green);
+  color: black;
+  border-radius: 5%;
+  padding: 3px 5px;
+  box-shadow: 0 0 16px 3px transparent, /* inner */ 0 0 100px 4px transparent; /* outer */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+@media (max-width: 800px) {
+  body {
+    display: relative;
+    overflow: scroll;
+  }
+
+  fieldset {
+    flex-direction: column;
+  }
+
+  #image-section {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+  }
+
+  #form-section {
+    position: relative;
+    background-color: black;
+    top: 100vh;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.8;
+  }
 }
