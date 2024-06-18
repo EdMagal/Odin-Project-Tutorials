@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300;500;600;700&family=Roboto:wght@100;300;900&display=swap");
+
+:root {
+  --light-green: #b5d543;
+  --mid-green: #86ab17;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+  color: var(--mid-green);
+  background-color: black;
+}
+
+canvas {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: -2;
+}
+
+section {
+  width: 500px;
+  height: 100vh;
+  display: block;
+}
+
+fieldset {
+  border: 0;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+fieldset > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  font-family: "Red Hat Mono", monospace;
+  background: #282c1e;
+  border: 3px solid #29331f;
+  color: var(--light-green);
+  border-radius: 2px;
+  padding: 3px 5px;
+  box-shadow: 0 0 16px 3px transparent, /* inner */ 0 0 100px 4px transparent; /* outer */
+  font-size: 15px;
+}
+
+#image-section {
+  flex-shrink: 1;
+  height: 100%;
+  background: url("images/danielburka.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: -3;
+}
+
+.green {
+  color: var(--light-green);
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+#image-caption {
+  margin-bottom: 10px;
+  opacity: 0.5;
+  color: white;
+  font-size: 0.8rem;
+}
+
+#form-section {
+  padding: 0.5rem;
+  width: 45vw;
+  font-family: "Red Hat Mono", monospace;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#message {
+  color: var(--light-green);
+  font-family: "Red Hat Mono", Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: lighter;
+  text-shadow: 0 0 26px var(--mid-green), 0 0 30px var(--mid-green),
+    0 0 50px var(--mid-green), 0 0 100px var(--mid-green);
+}
+
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#form-section #message h1::after {
+  content: "|";
+  animation-delay: 10s;
+  animation: flickerAnimation 500ms 4s infinite;
+  font-size: 2.8rem;
+  font-weight: 100;
+}
+
+input:focus {
+  border-color: var(--mid-green);
+  box-shadow: 0 0 16px 3px var(--mid-green),
+    /* inner */ 0 0 150px 4px var(--mid-green); /* outer */
+  color: var(--mid-green);
+  border-width: 0;
+}
