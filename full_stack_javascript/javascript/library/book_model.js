@@ -19,3 +19,7 @@ Book.prototype.index = function () {
 Book.prototype.toggleRead = function () {
   this.read = !this.read;
 };
+
+Book.prototype.delete = function () {
+  delete library[this.id];
+};
