@@ -26,44 +26,44 @@ submitBook.addEventListener("submit", (ev) => {
 // Handle the creation of the HTML elements
 function create(book) {
   // create a new table row to insert the book's info
+  const tableBody = document.getElementById("books");
   const tableRow = document.createElement("tr");
 
-  // Appends a cell with the ID of the book
+  // Create the table data and buttons
   const tableDataId = document.createElement("td");
-  tableDataId.innerHTML = book["id"];
-  tableRow.appendChild(tableDataId);
-
-  // Appends a cell with the TITLE of the book
   const tableDataTitle = document.createElement("td");
-  tableDataTitle.innerHTML = book["title"];
-  tableRow.appendChild(tableDataTitle);
-
-  // Appends a cell with the AUTHOR of the book
   const tableDataAuthor = document.createElement("td");
-  tableDataAuthor.innerHTML = book["author"];
-  tableRow.appendChild(tableDataAuthor);
-
-  // Appends a cell with the NUMBER OF PAGES of the book
   const tableDataPages = document.createElement("td");
-  tableDataPages.innerHTML = book["pages"];
-  tableRow.appendChild(tableDataPages);
-
-  // Appends a cell with a button to toggle READ / NOT READ
   const tableDataRead = document.createElement("td");
-  tableRow.appendChild(tableDataRead);
-  // Appends a cell with a button to toggle READ / NOT READ
+  const tableDataDelete = document.createElement("td");
   const readButton = document.createElement("button");
+  const deleteButton = document.createElement("button");
+
+  // Fill the text inside each table data
+  tableDataId.innerHTML = book["id"];
+  tableDataTitle.innerHTML = book["title"];
+  tableDataAuthor.innerHTML = book["author"];
+  tableDataPages.innerHTML = book["pages"];
   readButton.innerHTML = book["read"] ? "Read" : "Not Read";
+  deleteButton.innerHTML = "Delete";
+
+  // Appends the table data cell to the table row
+  tableRow.appendChild(tableDataId);
+  tableRow.appendChild(tableDataTitle);
+  tableRow.appendChild(tableDataAuthor);
+  tableRow.appendChild(tableDataPages);
+  tableRow.appendChild(tableDataRead);
+  tableRow.appendChild(tableDataDelete);
+  tableDataRead.appendChild(readButton);
+  tableDataDelete.appendChild(deleteButton);
+
+  // Adds the toggle functionality to the READ/NOT READ button
   readButton.addEventListener("click", () => {
     book.toggleRead();
     readButton.innerHTML = book["read"] ? "Read" : "Not Read";
   });
-  tableDataRead.appendChild(readButton);
 
-  // Appends a cell with a button to DELETE the book row
-  const tableDataDelete = document.createElement("button");
-  tableDataDelete.innerHTML = "Delete";
-  tableRow.appendChild(tableDataDelete);
+  // Adds the delete functionality to the DELETE button
   tableDataDelete.addEventListener("click", () => {
     let confirmationText = `Are you sure you want to delete ${book["title"]}?`;
     if (confirm(confirmationText)) {
@@ -72,6 +72,7 @@ function create(book) {
     }
   });
 
-  document.getElementById("books").appendChild(tableRow);
+  tableBody.appendChild(tableRow);
+
   return book;
 }

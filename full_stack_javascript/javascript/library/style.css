@@ -1,0 +1,56 @@
+@import url("https://fonts.cdnfonts.com/css/old-english-five");
+
+:root {
+  --skintone-color: #de9b72;
+  --dark-color: #3a3d3e;
+}
+
+body {
+  background-image: url("images/henrybe.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Old English Five", sans-serif;
+  font-size: 40px;
+  color: rgb(134, 73, 0);
+  text-shadow: 2px 2px rgb(67, 37, 0);
+}
+
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  color: rgb(125, 69, 0);
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 50vw;
+}
+
+#main {
+  width: 80vw;
+  height: 90vh;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  border: 5px solid rgb(125, 69, 0);
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+#add-book {
+  padding: 4px 10px;
+  margin: 10px;
+  border: 2px solid rgb(125, 69, 0);
+  border-radius: 5px;
+  background-color: hsl(45, 50%, 44%);
+}
