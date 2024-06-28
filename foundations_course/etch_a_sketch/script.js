@@ -106,7 +106,10 @@ class Square {
     const square = document.createElement("div");
     square.className = "square";
     square.style = `width: ${this.squareSize}px; height: ${this.squareSize}px`;
-    square.addEventListener("mouseover", (e) => {
+    square.addEventListener("mouseover", paintSquare);
+    square.addEventListener("mousedown", paintSquare);
+
+    function paintSquare(e) {
       if (e.buttons === 1) {
         if (b.squareColor === 0) {
           square.style.backgroundColor = "darkgray";
@@ -118,7 +121,7 @@ class Square {
           square.style.backgroundColor = `hsla(0,0%,0%,${this.alpha})`;
         }
       }
-    });
+    }
     return square;
   }
 }
