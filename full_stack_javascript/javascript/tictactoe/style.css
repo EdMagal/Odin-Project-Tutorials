@@ -1,0 +1,17 @@
+#board {
+  display: grid;
+  grid-template-columns: 36px 36px 36px;
+  grid-template-rows: 36px 36px 36px;
+  grid-gap: 1px;
+}
+
+.cell {
+  border: 1px solid black;
+  cursor: pointer;
+  height: 36px;
+  width: 36px;
+  padding: 2px 7px;
+  font-size: 24px;
+  font-family: "Comic Sans MS", "Helvetica Neue";
+  box-sizing: border-box;
+}
