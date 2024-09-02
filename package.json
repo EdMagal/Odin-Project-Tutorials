@@ -1,10 +1,20 @@
 {
   "devDependencies": {
-    "jester": "^0.2.3"
+    "html-webpack-plugin": "^5.6.0",
+    "jester": "^0.2.3",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
   },
-  "type": "module",
   "scripts": {
     "test": "jest",
+    "build": "webpack",
     "test:watch": "jest --watch"
-  }
+  },
+  "name": "odin-project-tutorials",
+  "description": "This repository will host all the projects and files I work on while I work on the tutorials at Odin Projects",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
