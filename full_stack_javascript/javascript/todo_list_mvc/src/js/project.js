@@ -1,6 +1,6 @@
 import task from "./task.js";
 
-const project = (function proj() {
+const project = (function () {
   const projectsList = [];
   let id = 1;
 
@@ -10,7 +10,6 @@ const project = (function proj() {
     const newProject = {
       id: id++,
       name: name,
-      tasks: [],
     };
     projectsList.push(newProject);
     return newProject;
@@ -24,9 +23,14 @@ const project = (function proj() {
     return projectsList.find((someProject) => someProject.id === id);
   };
 
-  const addTask = () => {};
+  const destroy = (id) => {
+    const projectToRemove = find(id);
+    if (projectToRemove) {
+      projectsList.splice(projectsList.indexOf(projectToRemove), 1);
+    }
+  };
 
-  return { create, list, find };
+  return { create, list, find, destroy };
 })();
 
 export default project;
