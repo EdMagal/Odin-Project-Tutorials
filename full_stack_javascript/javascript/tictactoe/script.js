@@ -1,3 +1,5 @@
+const gameOverMessage = document.getElementById("game-over-msg");
+
 const player = (function createPlayer() {
   // creates a player object
   let player = "X";
@@ -12,16 +14,17 @@ const player = (function createPlayer() {
     let played = false;
 
     if (!board.hasWon() && !board.isBoardFull()) {
-      console.log("played", !board.hasWon() && !board.isBoardFull());
       played = board.placePeg(row, col, player);
       board.displayBoard();
       if (board.hasWon()) {
         console.log(`${player} wins!`);
+        gameOverMessage.textContent = `${player} wins!`;
         return true;
       }
 
       if (board.isBoardFull()) {
         console.log("It's a draw!");
+        gameOverMessage.textContent = "It's a draw!";
         return true;
       }
     }
@@ -116,6 +119,7 @@ const board = (function createBoard() {
   // resets the console board
   const resetBoard = () => {
     consoleBoard.forEach((row) => row.fill(""));
+    gameOverMessage.textContent = "";
     board.displayBoard();
     hmtlBoard.forEach((row) =>
       row.forEach((col) => {
