@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ToDo List</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>ToDo List</h1>
-      <nav>
-        <button id="project-dialog-open-btn"">New Project</button>
-      </nav>
-      <dialog id="add-project-dialog">
-        <form>
-          <label for="project-name">Project Name:</label>
-          <input type="text" id="project-name" name="project-name" required />
-          <button id="new-project-btn">Add Project</button>
-          <button id="project-dialog-close-btn">Cancel</button>
+    <div class="container">
+      <h1 class="header">Todo List</h1>
+
+      <!-- Project Creation Form -->
+      <form id="projectForm" class="form">
+        <input
+          id="projectTitleInput"
+          type="text"
+          placeholder="New project title..."
+          class="input"
+        />
+        <button type="submit" class="button">Add Project</button>
+      </form>
+
+      <!-- Project Selection -->
+      <select id="projectSelect" class="select">
+        <option value="">Select a project</option>
+      </select>
+
+      <!-- Task Creation Form -->
+      <div id="taskFormContainer" class="hidden">
+        <form id="taskForm" class="form">
+          <input
+            id="taskTitleInput"
+            type="text"
+            placeholder="Task title..."
+            class="input"
+          />
+          <textarea
+            id="taskDescriptionInput"
+            placeholder="Task description..."
+            class="textarea"
+          ></textarea>
+          <input
+            id="taskDateInput"
+            type="date"
+            placeholder="dd/mm/yyyy"
+            class="input"
+          />
+          <select id="taskPrioritySelect" class="select">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <button type="submit" class="button">Add Task</button>
         </form>
-      </dialog>
-    </header>
+      </div>
 
-    <!-- the projects will be listed in this div-->
-    <div id="projects-list"></div>
+      <!-- Task List -->
+      <ul id="taskList" class="task-list"></ul>
 
-    <!-- the tasks for the selected project will show in this div-->
-    <div id="project-tasks"></div>
+      <p id="noProjectsMessage" class="hidden">
+        No projects yet. Create one to get started!
+      </p>
+    </div>
   </body>
 </html>
