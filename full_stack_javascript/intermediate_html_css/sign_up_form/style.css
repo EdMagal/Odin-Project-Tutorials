@@ -108,6 +108,10 @@ a:visited {
   width: 40vw;
 }
 
+#form-main {
+  z-index: 3;
+}
+
 #message {
   color: var(--light-green);
   font-family: "Red Hat Mono", Haettenschweiler, "Arial Narrow Bold", sans-serif;
