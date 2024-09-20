@@ -1,0 +1,30 @@
+!<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Sequence and Merge Sort</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Fibbonacci Recursion</h1>
+    <div id="fibonacci-container">
+        <h2>Enter a number:</h2>
+        <input type="number" id="fibonacciInput" min="0" max="30" />
+        <button id="fibonacciButton">Calculate Fibonacci</button>
+        <div id="fibonacciResult"></div>
+      </div>
+    </div>
+
+    <h1>Merge Sort</h1>
+    <div id="merge-container">
+        <h2>Enter numbers separated by a comma:</h2>
+        <input type="text" id="mergeInput" pattern="(\d+)(,\d+)*"/>
+        <button id="mergeButton">Sort</button>
+        <div id="mergeResult"></div>
+      </div>
+    </div>
+  </body>
+  <script src="fibonacci.js"></script>
+  <script src="merge_sort.js"></script>
+</html>
