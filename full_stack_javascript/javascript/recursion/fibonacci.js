@@ -14,16 +14,16 @@ fibonacciButton.addEventListener("click", (e) => {
     n = 30;
   }
   const result = fibonacci(n);
-  fibonacciResult.textContent = `The ${n}th Fibonacci number is ${result}.`;
+  fibonacciResult.textContent = `The ${n}th Fibonacci sequence is ${result}.`;
 });
 
 // recursive function that returns an array with the first nth Fibonacci numbers
 function fibonacci(n) {
+  n = parseInt(n);
   if (n === 0) return [];
   if (n === 1) return [0];
   if (n === 2) return [0, 1];
   const fibs = fibonacci(n - 1);
-  console.log(n, fibs);
-  fibs.push(fibs[n - 1] + fibs[n - 2]);
+  fibs.push(fibs[n - 2] + fibs[n - 3]);
   return fibs;
 }
