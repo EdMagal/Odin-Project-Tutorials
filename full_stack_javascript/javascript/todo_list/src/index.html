@@ -3,64 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
+    <title>Todo List Project</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1 class="header">Todo List</h1>
+      <header>
+        <h1>Todo List</h1>
+      </header>
 
-      <!-- Project Creation Form -->
-      <form id="projectForm" class="form">
-        <input
-          id="projectTitleInput"
-          type="text"
-          placeholder="New project title..."
-          class="input"
-        />
-        <button type="submit" class="button">Add Project</button>
-      </form>
+      <main>
+        <aside>
+          <h2>Projects</h2>
+          <ul id="project-list">
+            <li class="project-item active" data-project="default">Default</li>
+          </ul>
+          <form id="new-project-form">
+            <input
+              type="text"
+              id="new-project-input"
+              placeholder="New project name"
+            />
+            <button type="submit">Add Project</button>
+          </form>
+        </aside>
 
-      <!-- Project Selection -->
-      <select id="projectSelect" class="select">
-        <option value="">Select a project</option>
-      </select>
+        <section>
+          <h2 id="current-project">Default Project</h2>
+          <ul id="todo-list"></ul>
+          <form id="new-todo-form">
+            <input
+              type="text"
+              id="new-todo-title"
+              placeholder="New todo title"
+            />
+            <input type="date" id="new-todo-due-date" />
+            <select id="new-todo-priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+            <button type="submit">Add Todo</button>
+          </form>
+        </section>
+      </main>
 
-      <!-- Task Creation Form -->
-      <div id="taskFormContainer" class="hidden">
-        <form id="taskForm" class="form">
-          <input
-            id="taskTitleInput"
-            type="text"
-            placeholder="Task title..."
-            class="input"
-          />
+      <div id="todo-details" class="modal hidden">
+        <div class="modal-content">
+          <span id="close-modal" class="close-btn">&times;</span>
+          <h3>Edit Todo</h3>
+          <input type="text" id="edit-todo-title" />
           <textarea
-            id="taskDescriptionInput"
-            placeholder="Task description..."
-            class="textarea"
+            id="edit-todo-description"
+            placeholder="Description"
           ></textarea>
-          <input
-            id="taskDateInput"
-            type="date"
-            placeholder="dd/mm/yyyy"
-            class="input"
-          />
-          <select id="taskPrioritySelect" class="select">
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
+          <input type="date" id="edit-todo-due-date" />
+          <select id="edit-todo-priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
           </select>
-          <button type="submit" class="button">Add Task</button>
-        </form>
+          <button id="save-edit-btn">Save</button>
+          <button id="delete-todo-btn">Delete</button>
+        </div>
       </div>
-
-      <!-- Task List -->
-      <ul id="taskList" class="task-list"></ul>
-
-      <p id="noProjectsMessage" class="hidden">
-        No projects yet. Create one to get started!
-      </p>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
