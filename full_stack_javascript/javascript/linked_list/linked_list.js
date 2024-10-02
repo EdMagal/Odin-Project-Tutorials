@@ -102,19 +102,7 @@ class LinkedList {
   }
 
   insertAt(value, index) {
-    if (index < 0 || index > this.size()) return;
-    if (index === 0) {
-      this.prepend(value);
-      return;
-    }
-    const newNode = new Node(value);
-    const previousNode = this.at(index - 1);
-    newNode.next = previousNode.next;
-    previousNode.next = newNode;
-  }
-
-  insertAt(value, index) {
-    if (index < 0 || index > this.size()) return;
+    if (index < 0 || index > this.size()) return null;
     if (index === 0) {
       this.prepend(value);
       return;
@@ -125,3 +113,14 @@ class LinkedList {
     previousNode.next = newNode;
   }
 }
+
+const list = new LinkedList();
+
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+list.append("hamster");
+list.append("snake");
+list.append("turtle");
+
+console.log(list.toString());
